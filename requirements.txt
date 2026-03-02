@@ -1,0 +1,11 @@
+# -e.
+pandas 
+numpy 
+scikit-learn
+mlflow
+streamlit
+fastapi
+uvicorn
+pydantic
+joblib
+dvc

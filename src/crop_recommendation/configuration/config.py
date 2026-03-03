@@ -5,7 +5,8 @@ import yaml
 from crop_recommendation.entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
-    DataPreprocessingConfig
+    DataPreprocessingConfig,
+    ModelTrainerConfig
 )
 
 
@@ -67,4 +68,17 @@ class ConfigManager:
             processed_test_dir=Path(preprocessing["processed_test_dir"]),
             scaler_path=Path(preprocessing["scaler_path"])
         )
-     
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        trainer = self.config["model_trainer"]
+        preprocessing = self.config["data_preprocessing"]
+
+        os.makedirs(trainer["root_dir"], exist_ok=True)
+
+        return ModelTrainerConfig(
+            root_dir=Path(trainer["root_dir"]),
+            processed_train_dir=Path(preprocessing["processed_train_dir"]),
+            processed_test_dir=Path(preprocessing["processed_test_dir"]),
+            model_path=Path(trainer["model_path"]),
+            params_file=Path(trainer["params_file"]) 
+
+        )

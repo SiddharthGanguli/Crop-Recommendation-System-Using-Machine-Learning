@@ -25,3 +25,11 @@ class DataPreprocessingConfig:
     processed_train_dir: Path
     processed_test_dir: Path
     scaler_path: Path
+
+@dataclass
+class ModelTrainerConfig:
+    root_dir: Path
+    processed_train_dir: Path
+    processed_test_dir: Path
+    model_path: Path
+    params_file: Path

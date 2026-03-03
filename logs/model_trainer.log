@@ -1,0 +1,9 @@
+[2026-03-03 18:05:36,054] INFO - crop_recommendation.components.training - Starting Optuna hyperparameter tuning with MLflow
+[2026-03-03 18:06:54,686] INFO - crop_recommendation.components.training - Starting Optuna hyperparameter tuning with MLflow
+[2026-03-03 18:08:05,750] INFO - crop_recommendation.components.training - Starting Optuna hyperparameter tuning with MLflow
+[2026-03-03 18:10:17,123] INFO - crop_recommendation.components.training - Best accuracy: 0.9954545454545455
+[2026-03-03 18:10:17,125] INFO - crop_recommendation.components.training - Best parameters: {'n_estimators': 270, 'max_depth': 18, 'min_samples_split': 3, 'min_samples_leaf': 5, 'random_state': 42}
+[2026-03-03 18:11:57,177] INFO - crop_recommendation.components.training - Starting Optuna hyperparameter tuning with MLflow
+[2026-03-03 18:14:02,646] INFO - crop_recommendation.components.training - Best accuracy: 0.9954545454545455
+[2026-03-03 18:14:02,648] INFO - crop_recommendation.components.training - Best parameters: {'n_estimators': 105, 'max_depth': 11, 'min_samples_split': 10, 'min_samples_leaf': 1, 'random_state': 42}
+[2026-03-03 18:14:25,754] INFO - crop_recommendation.components.training - Best model trained, logged to MLflow, and saved

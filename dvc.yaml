@@ -51,3 +51,13 @@ stages:
       - artifacts/data_preprocessing/test_processed.csv
     outs:
       - artifacts/model_trainer/model.pkl
+
+  model_evaluation:
+    cmd: python -m crop_recommendation.pipeline.05_evaluation_pipeline
+    deps:
+      - src/crop_recommendation/pipeline/05_evaluation_pipeline.py
+      - src/crop_recommendation/components/evaluation.py
+      - artifacts/model_trainer/model.pkl
+      - artifacts/data_preprocessing/test_processed.csv
+    outs:
+      - artifacts/model_evaluation/metrics.json

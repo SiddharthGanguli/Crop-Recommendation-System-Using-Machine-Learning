@@ -6,7 +6,8 @@ from crop_recommendation.entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
     DataPreprocessingConfig,
-    ModelTrainerConfig
+    ModelTrainerConfig,
+    ModelEvaluationConfig
 )
 
 
@@ -81,4 +82,15 @@ class ConfigManager:
             model_path=Path(trainer["model_path"]),
             params_file=Path(trainer["params_file"]) 
 
+        )
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        evaluation = self.config["model_evaluation"]
+
+        os.makedirs(evaluation["root_dir"], exist_ok=True)
+
+        return ModelEvaluationConfig(
+            root_dir=Path(evaluation["root_dir"]),
+            model_path=Path(evaluation["model_path"]),
+            processed_test_dir=Path(evaluation["processed_test_dir"]),
+            metrics_file=Path(evaluation["metrics_file"])
         )

@@ -33,3 +33,10 @@ class ModelTrainerConfig:
     processed_test_dir: Path
     model_path: Path
     params_file: Path
+
+@dataclass
+class ModelEvaluationConfig:
+    root_dir: Path
+    model_path: Path
+    processed_test_dir: Path
+    metrics_file: Path

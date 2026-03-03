@@ -93,7 +93,7 @@ class ModelTrainer:
         logger.info("Starting Optuna hyperparameter tuning with MLflow")
 
 
-        mlflow.set_tracking_uri("http://ec2-54-146-198-25.compute-1.amazonaws.com:5000")
+        mlflow.set_tracking_uri("http://ec2-3-87-236-150.compute-1.amazonaws.com:5000")
         mlflow.set_experiment("Crop_Recommendation_Optuna")
 
         params = self._load_params()

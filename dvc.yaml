@@ -1,0 +1,19 @@
+stages:
+  data_ingestion:
+    cmd: python -m crop_recommendation.pipeline.01_data_ingestion_pipeline
+    deps:
+      - Data/raw/Crop_recommendation.csv
+      - config/config.yaml
+    outs:
+      - artifacts/data_ingestion/train.csv
+      - artifacts/data_ingestion/test.csv
+
+  data_validation:
+    cmd: python -m crop_recommendation.pipeline.02_data_validation_pipeline
+    deps:
+      - artifacts/data_ingestion/train.csv
+      - config/config.yaml
+      - config/schema.yaml
+      - src/crop_recommendation/components/data_validation.py
+    outs:
+      - artifacts/data_validation/status.txt

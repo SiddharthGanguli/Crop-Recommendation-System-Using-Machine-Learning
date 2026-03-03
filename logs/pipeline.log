@@ -1,0 +1,14 @@
+[2026-03-03 12:50:35,444] INFO - __main__ - Data Ingestion Stage started...
+[2026-03-03 12:50:35,551] INFO - __main__ - Train data saved at: artifacts/data_ingestion/train.csv
+[2026-03-03 12:50:35,551] INFO - __main__ - Test data saved at: artifacts/data_ingestion/test.csv
+[2026-03-03 12:50:35,551] INFO - __main__ - Data Ingestion Stage completed successfully.
+[2026-03-03 12:56:50,622] INFO - __main__ - Data Ingestion Stage started...
+[2026-03-03 12:56:50,663] INFO - __main__ - Train data saved at: artifacts/data_ingestion/train.csv
+[2026-03-03 12:56:50,663] INFO - __main__ - Test data saved at: artifacts/data_ingestion/test.csv
+[2026-03-03 12:56:50,663] INFO - __main__ - Data Ingestion Stage completed successfully.
+[2026-03-03 13:16:52,258] INFO - __main__ - Data Ingestion Stage started...
+[2026-03-03 13:16:52,280] INFO - __main__ - Train data saved at: artifacts/data_ingestion/train.csv
+[2026-03-03 13:16:52,280] INFO - __main__ - Test data saved at: artifacts/data_ingestion/test.csv
+[2026-03-03 13:16:52,280] INFO - __main__ - Data Ingestion Stage completed successfully.
+[2026-03-03 13:18:27,653] INFO - __main__ - Data Validation Stage started...
+[2026-03-03 13:18:27,661] INFO - __main__ - Data Validation Stage completed successfully.

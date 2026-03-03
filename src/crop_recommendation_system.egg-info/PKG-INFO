@@ -1,13 +1,8 @@
-Metadata-Version: 2.4
-Name: crop_recommendation_system
+Metadata-Version: 2.1
+Name: crop-recommendation-system
 Version: 1.1.1
 Summary: Crop Prediction Machine Learning System
 Author: Siddhartha Ganguli
 Author-email: siddharthaganguli0093@gmail.com
 License: MIT
 Requires-Python: >=3.8
-Dynamic: author
-Dynamic: author-email
-Dynamic: license
-Dynamic: requires-python
-Dynamic: summary

@@ -1,0 +1,4 @@
+[2026-03-03 13:18:27,655] INFO - crop_recommendation.components.data_validation - Data validation started.
+[2026-03-03 13:18:27,661] INFO - crop_recommendation.components.data_validation - Column validation passed.
+[2026-03-03 13:18:27,661] INFO - crop_recommendation.components.data_validation - Validation status: True
+[2026-03-03 13:18:27,661] INFO - crop_recommendation.components.data_validation - Data validation completed.

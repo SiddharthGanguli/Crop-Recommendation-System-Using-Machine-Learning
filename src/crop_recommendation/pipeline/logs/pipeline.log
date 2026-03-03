@@ -1,0 +1,10 @@
+[2026-03-03 12:46:56,106] INFO - __main__ - Data Ingestion Stage started...
+[2026-03-03 12:46:56,106] ERROR - __main__ - Error in Data Ingestion Stage
+Traceback (most recent call last):
+  File "/Users/siddharthaganguli/Desktop/Proj1/Ml_model/crop_recommendation_sys/src/crop_recommendation/pipeline/01_data_ingestion_pipeline.py", line 19, in main
+    config_manager = ConfigManager(
+  File "/Users/siddharthaganguli/Desktop/Proj1/Ml_model/crop_recommendation_sys/src/crop_recommendation/configuration/config.py", line 10, in __init__
+    self.config=self._read_yaml(file_path)
+  File "/Users/siddharthaganguli/Desktop/Proj1/Ml_model/crop_recommendation_sys/src/crop_recommendation/configuration/config.py", line 13, in _read_yaml
+    with open(filepath,'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'config/config.yaml'

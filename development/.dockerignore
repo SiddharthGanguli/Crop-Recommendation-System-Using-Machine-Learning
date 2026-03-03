@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+.env
+crop_env/
+artifacts/
+notebooks/
+logs/

@@ -16,3 +16,12 @@ class DataValidationConfig:
     validation_status_file: Path
     train_dir: Path
     schema_file: Path
+    
+@dataclass
+class DataPreprocessingConfig:
+    root_dir: Path
+    train_dir: Path
+    test_dir: Path
+    processed_train_dir: Path
+    processed_test_dir: Path
+    scaler_path: Path

@@ -2,3 +2,7 @@
 [2026-03-03 13:18:27,661] INFO - crop_recommendation.components.data_validation - Column validation passed.
 [2026-03-03 13:18:27,661] INFO - crop_recommendation.components.data_validation - Validation status: True
 [2026-03-03 13:18:27,661] INFO - crop_recommendation.components.data_validation - Data validation completed.
+[2026-03-03 13:42:08,133] INFO - crop_recommendation.components.data_validation - Data validation started.
+[2026-03-03 13:42:08,137] INFO - crop_recommendation.components.data_validation - Column validation passed.
+[2026-03-03 13:42:08,138] INFO - crop_recommendation.components.data_validation - Validation status: True
+[2026-03-03 13:42:08,138] INFO - crop_recommendation.components.data_validation - Data validation completed.

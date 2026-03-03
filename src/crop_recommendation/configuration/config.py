@@ -4,7 +4,8 @@ import yaml
 
 from crop_recommendation.entity.config_entity import (
     DataIngestionConfig,
-    DataValidationConfig
+    DataValidationConfig,
+    DataPreprocessingConfig
 )
 
 
@@ -51,3 +52,19 @@ class ConfigManager:
             train_dir=Path(validation["train_dir"]),
             schema_file=Path(validation["schema_file"]),
         )
+    
+    def get_data_preprocessing_config(self) -> DataPreprocessingConfig:
+        preprocessing = self.config["data_preprocessing"]
+        ingestion = self.config["data_ingestion"]
+
+        os.makedirs(preprocessing["root_dir"], exist_ok=True)
+
+        return DataPreprocessingConfig(
+            root_dir=Path(preprocessing["root_dir"]),
+            train_dir=Path(ingestion["train_dir"]),
+            test_dir=Path(ingestion["test_dir"]),
+            processed_train_dir=Path(preprocessing["processed_train_dir"]),
+            processed_test_dir=Path(preprocessing["processed_test_dir"]),
+            scaler_path=Path(preprocessing["scaler_path"])
+        )
+     

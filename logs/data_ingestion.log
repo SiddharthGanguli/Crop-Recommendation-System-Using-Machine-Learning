@@ -19,3 +19,10 @@
 [2026-03-03 13:16:52,270] INFO - crop_recommendation.components.data_ingestion - Splitting dataset into train and test...
 [2026-03-03 13:16:52,280] INFO - crop_recommendation.components.data_ingestion - Train and test data saved successfully.
 [2026-03-03 13:16:52,280] INFO - crop_recommendation.components.data_ingestion - Data ingestion completed.
+[2026-03-03 13:42:07,655] INFO - crop_recommendation.components.data_ingestion - Data ingestion started.
+[2026-03-03 13:42:07,655] INFO - crop_recommendation.components.data_ingestion - Reading dataset...
+[2026-03-03 13:42:07,659] INFO - crop_recommendation.components.data_ingestion - Dataset loaded with shape: (2200, 8)
+[2026-03-03 13:42:07,667] INFO - crop_recommendation.components.data_ingestion - Raw data saved at artifacts/data_ingestion/raw.csv
+[2026-03-03 13:42:07,667] INFO - crop_recommendation.components.data_ingestion - Splitting dataset into train and test...
+[2026-03-03 13:42:07,675] INFO - crop_recommendation.components.data_ingestion - Train and test data saved successfully.
+[2026-03-03 13:42:07,675] INFO - crop_recommendation.components.data_ingestion - Data ingestion completed.

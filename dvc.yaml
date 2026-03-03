@@ -17,3 +17,15 @@ stages:
       - src/crop_recommendation/components/data_validation.py
     outs:
       - artifacts/data_validation/status.txt
+      
+  data_preprocessing:
+    cmd: python -m crop_recommendation.pipeline.03_data_preprocessing_pipeline
+    deps:
+      - artifacts/data_ingestion/train.csv
+      - artifacts/data_ingestion/test.csv
+      - config/config.yaml
+      - src/crop_recommendation/components/data_preprocessing.py
+    outs:
+      - artifacts/data_preprocessing/train_processed.csv
+      - artifacts/data_preprocessing/test_processed.csv
+      - artifacts/data_preprocessing/scaler.pkl

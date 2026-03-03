@@ -5,8 +5,8 @@ stages:
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: b95be856f95989d7a2426deb12210a2f
-      size: 820
+      md5: 2dd63834ea0ced3537cebaa2e2f24fe2
+      size: 1050
     - path: data/raw/Crop_recommendation.csv
       hash: md5
       md5: 5e743dd4cf49f84d23a904cd51c9b5b8
@@ -17,12 +17,12 @@ stages:
       size: 2175
     - path: src/crop_recommendation/configuration/config.py
       hash: md5
-      md5: ca30c897841487220b16df8490bf844d
-      size: 2942
+      md5: be5718be048693a9078e1f335d662384
+      size: 3434
     - path: src/crop_recommendation/entity/config_entity.py
       hash: md5
-      md5: c26b030acef4233d91ce99f09a218595
-      size: 658
+      md5: 716795aaff797711660745be7fbb1879
+      size: 791
     outs:
     - path: artifacts/data_ingestion/test.csv
       hash: md5
@@ -41,8 +41,8 @@ stages:
       size: 118179
     - path: config/config.yaml
       hash: md5
-      md5: b95be856f95989d7a2426deb12210a2f
-      size: 820
+      md5: 2dd63834ea0ced3537cebaa2e2f24fe2
+      size: 1050
     - path: config/schema.yaml
       hash: md5
       md5: 58ac79dc7aac62f88404417fc11757af
@@ -53,12 +53,12 @@ stages:
       size: 1855
     - path: src/crop_recommendation/configuration/config.py
       hash: md5
-      md5: ca30c897841487220b16df8490bf844d
-      size: 2942
+      md5: be5718be048693a9078e1f335d662384
+      size: 3434
     - path: src/crop_recommendation/entity/config_entity.py
       hash: md5
-      md5: c26b030acef4233d91ce99f09a218595
-      size: 658
+      md5: 716795aaff797711660745be7fbb1879
+      size: 791
     outs:
     - path: artifacts/data_validation/status.txt
       hash: md5
@@ -81,20 +81,20 @@ stages:
       size: 4
     - path: config/config.yaml
       hash: md5
-      md5: b95be856f95989d7a2426deb12210a2f
-      size: 820
+      md5: 2dd63834ea0ced3537cebaa2e2f24fe2
+      size: 1050
     - path: src/crop_recommendation/components/data_preprocessing.py
       hash: md5
       md5: 784a4ebd5d91a366ec9cf4f8a22dee71
       size: 2812
     - path: src/crop_recommendation/configuration/config.py
       hash: md5
-      md5: ca30c897841487220b16df8490bf844d
-      size: 2942
+      md5: be5718be048693a9078e1f335d662384
+      size: 3434
     - path: src/crop_recommendation/entity/config_entity.py
       hash: md5
-      md5: c26b030acef4233d91ce99f09a218595
-      size: 658
+      md5: 716795aaff797711660745be7fbb1879
+      size: 791
     outs:
     - path: artifacts/data_preprocessing/scaler.pkl
       hash: md5
@@ -121,18 +121,42 @@ stages:
       size: 257006
     - path: config/config.yaml
       hash: md5
-      md5: b95be856f95989d7a2426deb12210a2f
-      size: 820
+      md5: 2dd63834ea0ced3537cebaa2e2f24fe2
+      size: 1050
     - path: params.yaml
       hash: md5
       md5: 8aba6de830eacc4b63fbed44a37567c0
       size: 226
     - path: src/crop_recommendation/pipeline/04_training_pipeline.py
       hash: md5
-      md5: c5ce7459f86b22b37e34177a62471bda
-      size: 854
+      md5: 4c134e2107aa3d86fd6b7f31decafd14
+      size: 853
     outs:
     - path: artifacts/model_trainer/model.pkl
       hash: md5
-      md5: 4849a6e2bfc1c6491d460b87c55a6d08
-      size: 2780825
+      md5: 930380290efc7ee5b4c1502873e4d79d
+      size: 3598105
+  model_evaluation:
+    cmd: python -m crop_recommendation.pipeline.05_evaluation_pipeline
+    deps:
+    - path: artifacts/data_preprocessing/test_processed.csv
+      hash: md5
+      md5: caad08ea2e86109c383f3b741c755842
+      size: 64348
+    - path: artifacts/model_trainer/model.pkl
+      hash: md5
+      md5: 930380290efc7ee5b4c1502873e4d79d
+      size: 3598105
+    - path: src/crop_recommendation/components/evaluation.py
+      hash: md5
+      md5: 18416c98371a0ee96735647417a1e550
+      size: 1874
+    - path: src/crop_recommendation/pipeline/05_evaluation_pipeline.py
+      hash: md5
+      md5: b3d3a49a5931574d77ae1963995c7d33
+      size: 708
+    outs:
+    - path: artifacts/model_evaluation/metrics.json
+      hash: md5
+      md5: 1f985f22d5d25069776cf9f56df85dc6
+      size: 145

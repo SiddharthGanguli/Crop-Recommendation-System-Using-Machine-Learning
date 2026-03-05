@@ -2,9 +2,16 @@ from fastapi import FastAPI
 import mlflow
 import mlflow.pyfunc
 import pandas as pd
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], 
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 MLFLOW_TRACKING_URI = "http://44.205.205.0:5000/"
 
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)

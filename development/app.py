@@ -5,8 +5,7 @@ import pandas as pd
 
 app = FastAPI()
 
-MLFLOW_TRACKING_URI = "http://ec2-54-91-16-63.compute-1.amazonaws.com:5000/"
-
+MLFLOW_TRACKING_URI = "http://44.205.205.0:5000/"
 
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 

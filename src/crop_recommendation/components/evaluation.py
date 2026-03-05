@@ -44,7 +44,7 @@ class ModelEvaluation:
         with open(self.config.metrics_file, "w") as f:
             json.dump(metrics, f, indent=4)
 
-        mlflow.set_tracking_uri("http://ec2-54-91-16-63.compute-1.amazonaws.com:5000")
+        mlflow.set_tracking_uri("http://44.205.205.0:5000/")
         mlflow.set_experiment("Crop_Recommendation_Evaluation")
 
         with mlflow.start_run(run_name="Model_Evaluation"):

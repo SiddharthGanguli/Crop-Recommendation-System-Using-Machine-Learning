@@ -120,7 +120,7 @@ class ModelTrainer:
         logger.info("Starting model training")
 
         mlflow.set_tracking_uri(
-            "http://ec2-54-91-16-63.compute-1.amazonaws.com:5000"
+            "http://44.205.205.0:5000/"
         )
 
         mlflow.set_experiment("Crop_Recommendation_Optuna")
@@ -156,9 +156,6 @@ class ModelTrainer:
 
             logger.info(f"Best parameters: {best_params}")
 
-            # -----------------------------
-            # Train final model
-            # -----------------------------
             model = RandomForestClassifier(
                 **best_params,
                 class_weight="balanced"
@@ -175,13 +172,11 @@ class ModelTrainer:
             mlflow.log_params(best_params)
             mlflow.log_metric("final_accuracy", final_accuracy)
 
-            # Log model to MLflow
             mlflow.sklearn.log_model(
                 model,
                 artifact_path="randomforestmodel"
             )
 
-            # Save locally
             Path(self.config.model_path).parent.mkdir(
                 parents=True,
                 exist_ok=True

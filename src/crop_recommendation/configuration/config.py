@@ -56,6 +56,7 @@ class ConfigManager:
         )
     
     def get_data_preprocessing_config(self) -> DataPreprocessingConfig:
+
         preprocessing = self.config["data_preprocessing"]
         ingestion = self.config["data_ingestion"]
 
@@ -66,8 +67,7 @@ class ConfigManager:
             train_dir=Path(ingestion["train_dir"]),
             test_dir=Path(ingestion["test_dir"]),
             processed_train_dir=Path(preprocessing["processed_train_dir"]),
-            processed_test_dir=Path(preprocessing["processed_test_dir"]),
-            scaler_path=Path(preprocessing["scaler_path"])
+            processed_test_dir=Path(preprocessing["processed_test_dir"])
         )
     def get_model_trainer_config(self) -> ModelTrainerConfig:
         trainer = self.config["model_trainer"]

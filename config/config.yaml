@@ -17,7 +17,7 @@ data_preprocessing:
   root_dir: artifacts/data_preprocessing
   processed_train_dir: artifacts/data_preprocessing/train_processed.csv
   processed_test_dir: artifacts/data_preprocessing/test_processed.csv
-  scaler_path: artifacts/data_preprocessing/scaler.pkl
+  
 
 model_trainer:
   root_dir: artifacts/model_trainer

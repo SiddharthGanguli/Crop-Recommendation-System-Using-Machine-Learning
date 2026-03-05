@@ -12,6 +12,7 @@ from sklearn.metrics import accuracy_score
 from crop_recommendation.entity.config_entity import ModelTrainerConfig
 from crop_recommendation.utils.logger import get_logger
 
+
 logger = get_logger(name=__name__, log_file="model_trainer.log")
 
 
@@ -21,9 +22,9 @@ class ModelTrainer:
         self.config = config
 
 
-    # ---------------------------
+    # -----------------------------
     # Load hyperparameters
-    # ---------------------------
+    # -----------------------------
     def _load_params(self):
 
         with open(self.config.params_file, "r") as f:
@@ -32,20 +33,24 @@ class ModelTrainer:
         return params
 
 
-    # ---------------------------
+    # -----------------------------
     # Load dataset
-    # ---------------------------
+    # -----------------------------
     def _load_data(self):
 
         train_df = pd.read_csv(self.config.processed_train_dir)
         test_df = pd.read_csv(self.config.processed_test_dir)
 
+        logger.info(f"Train dataset size: {train_df.shape}")
+        logger.info(f"Test dataset size: {test_df.shape}")
+        logger.info(f"Classes: {train_df['label'].unique()}")
+
         return train_df, test_df
 
 
-    # ---------------------------
+    # -----------------------------
     # Split features / target
-    # ---------------------------
+    # -----------------------------
     def _split_features_target(self, df):
 
         X = df.drop(columns=["label"])
@@ -54,9 +59,9 @@ class ModelTrainer:
         return X, y
 
 
-    # ---------------------------
-    # Optuna objective
-    # ---------------------------
+    # -----------------------------
+    # Optuna objective function
+    # -----------------------------
     def _objective(self, trial, X_train, y_train, X_test, y_test, rf_params):
 
         params = {
@@ -86,12 +91,14 @@ class ModelTrainer:
             ),
 
             "random_state": rf_params["random_state"]
-
         }
 
         with mlflow.start_run(nested=True):
 
-            model = RandomForestClassifier(**params)
+            model = RandomForestClassifier(
+                **params,
+                class_weight="balanced"
+            )
 
             model.fit(X_train, y_train)
 
@@ -105,9 +112,9 @@ class ModelTrainer:
         return accuracy
 
 
-    # ---------------------------
+    # -----------------------------
     # Main training pipeline
-    # ---------------------------
+    # -----------------------------
     def main_model_trainer(self):
 
         logger.info("Starting model training")
@@ -149,8 +156,13 @@ class ModelTrainer:
 
             logger.info(f"Best parameters: {best_params}")
 
+            # -----------------------------
             # Train final model
-            model = RandomForestClassifier(**best_params)
+            # -----------------------------
+            model = RandomForestClassifier(
+                **best_params,
+                class_weight="balanced"
+            )
 
             model.fit(X_train, y_train)
 
@@ -158,13 +170,18 @@ class ModelTrainer:
 
             final_accuracy = accuracy_score(y_test, preds)
 
+            logger.info(f"Final model accuracy: {final_accuracy}")
+
             mlflow.log_params(best_params)
             mlflow.log_metric("final_accuracy", final_accuracy)
 
-        
-            mlflow.sklearn.log_model(model, "random_forest_model")
+            # Log model to MLflow
+            mlflow.sklearn.log_model(
+                model,
+                artifact_path="randomforestmodel"
+            )
 
-        
+            # Save locally
             Path(self.config.model_path).parent.mkdir(
                 parents=True,
                 exist_ok=True

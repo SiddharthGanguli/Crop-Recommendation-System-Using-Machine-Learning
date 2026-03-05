@@ -1,19 +1,35 @@
-import mlflow
-import mlflow.pyfunc
+import joblib
 import pandas as pd
 
-mlflow.set_tracking_uri("http://ec2-54-91-16-63.compute-1.amazonaws.com:5000/")
+model = joblib.load(r"/Users/siddharthaganguli/Desktop/Proj1/Ml_model/crop_recommendation_sys/artifacts/model_trainer/model.pkl")
 
-model = mlflow.pyfunc.load_model("models:/random-forest@production")
+df = pd.read_csv(r"/Users/siddharthaganguli/Desktop/Proj1/Ml_model/crop_recommendation_sys/artifacts/data_preprocessing/train_processed.csv")
 
-sample = pd.DataFrame([{
-    "N":90,
-    "P":42,
-    "K":43,
-    "temperature":20.87974371,
-    "humidity":82.00274423,
-    "ph":6.502985292000001,
-    "rainfall":202.9355362
-}])
+X = df.drop(columns=["label"])
 
-print(model.predict(sample))
+preds = model.predict(X)
+
+print(pd.Series(preds).value_counts())
+
+
+samples = pd.DataFrame([
+# Rice
+{"N":90,"P":40,"K":40,"temperature":26,"humidity":80,"ph":6.0,"rainfall":230},
+
+# Banana
+{"N":120,"P":40,"K":50,"temperature":30,"humidity":90,"ph":6.5,"rainfall":110},
+
+# Coffee
+{"N":100,"P":30,"K":30,"temperature":23,"humidity":60,"ph":6.5,"rainfall":150},
+
+# Mango
+{"N":20,"P":20,"K":20,"temperature":28,"humidity":70,"ph":6.5,"rainfall":80}
+])
+
+print(model.predict(samples))
+print(model.predict_proba(samples))
+
+
+print(model.feature_names_in_)
+
+print(samples.columns)

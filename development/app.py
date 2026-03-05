@@ -10,7 +10,7 @@ MLFLOW_TRACKING_URI = "http://ec2-54-91-16-63.compute-1.amazonaws.com:5000/"
 
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 
-model = mlflow.pyfunc.load_model("models:/random-forest@production")
+model = mlflow.pyfunc.load_model("models:/random-forest1@production")
 
 
 @app.get("/")

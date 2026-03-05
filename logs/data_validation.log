@@ -18,3 +18,15 @@
 [2026-03-03 19:52:44,139] INFO - crop_recommendation.components.data_validation - Column validation passed.
 [2026-03-03 19:52:44,139] INFO - crop_recommendation.components.data_validation - Validation status: True
 [2026-03-03 19:52:44,139] INFO - crop_recommendation.components.data_validation - Data validation completed.
+[2026-03-05 13:50:53,691] INFO - crop_recommendation.components.data_validation - Data validation started.
+[2026-03-05 13:50:53,695] INFO - crop_recommendation.components.data_validation - Column validation passed.
+[2026-03-05 13:50:53,695] INFO - crop_recommendation.components.data_validation - Validation status: True
+[2026-03-05 13:50:53,695] INFO - crop_recommendation.components.data_validation - Data validation completed.
+[2026-03-05 13:52:57,069] INFO - crop_recommendation.components.data_validation - Data validation started.
+[2026-03-05 13:52:57,073] INFO - crop_recommendation.components.data_validation - Column validation passed.
+[2026-03-05 13:52:57,073] INFO - crop_recommendation.components.data_validation - Validation status: True
+[2026-03-05 13:52:57,073] INFO - crop_recommendation.components.data_validation - Data validation completed.
+[2026-03-05 13:56:52,232] INFO - crop_recommendation.components.data_validation - Data validation started.
+[2026-03-05 13:56:52,235] INFO - crop_recommendation.components.data_validation - Column validation passed.
+[2026-03-05 13:56:52,235] INFO - crop_recommendation.components.data_validation - Validation status: True
+[2026-03-05 13:56:52,236] INFO - crop_recommendation.components.data_validation - Data validation completed.

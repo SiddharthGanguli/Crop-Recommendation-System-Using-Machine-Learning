@@ -16,3 +16,23 @@
 [2026-03-05 12:28:31,765] INFO - crop_recommendation.components.training - Starting model training
 [2026-03-05 12:30:41,708] INFO - crop_recommendation.components.training - Best parameters: {'n_estimators': 267, 'max_depth': 11, 'min_samples_split': 10, 'min_samples_leaf': 5, 'random_state': 42}
 [2026-03-05 12:31:03,656] INFO - crop_recommendation.components.training - Model training completed
+[2026-03-05 13:02:05,220] INFO - crop_recommendation.components.training - Starting model training
+[2026-03-05 13:02:05,883] INFO - crop_recommendation.components.training - Train dataset size: (1760, 8)
+[2026-03-05 13:02:05,883] INFO - crop_recommendation.components.training - Test dataset size: (440, 8)
+[2026-03-05 13:02:05,885] INFO - crop_recommendation.components.training - Classes: ['orange' 'blackgram' 'lentil' 'banana' 'mango' 'maize' 'apple'
+ 'pomegranate' 'cotton' 'mungbean' 'pigeonpeas' 'chickpea' 'coffee' 'jute'
+ 'papaya' 'grapes' 'rice' 'kidneybeans' 'muskmelon' 'mothbeans'
+ 'watermelon' 'coconut']
+[2026-03-05 13:04:07,421] INFO - crop_recommendation.components.training - Best parameters: {'n_estimators': 273, 'max_depth': 30, 'min_samples_split': 9, 'min_samples_leaf': 5, 'random_state': 42}
+[2026-03-05 13:04:07,967] INFO - crop_recommendation.components.training - Final model accuracy: 0.9954545454545455
+[2026-03-05 13:04:31,112] INFO - crop_recommendation.components.training - Model training completed
+[2026-03-05 13:56:55,844] INFO - crop_recommendation.components.training - Starting model training
+[2026-03-05 13:56:56,561] INFO - crop_recommendation.components.training - Train dataset size: (1760, 8)
+[2026-03-05 13:56:56,561] INFO - crop_recommendation.components.training - Test dataset size: (440, 8)
+[2026-03-05 13:56:56,562] INFO - crop_recommendation.components.training - Classes: ['orange' 'blackgram' 'lentil' 'banana' 'mango' 'maize' 'apple'
+ 'pomegranate' 'cotton' 'mungbean' 'pigeonpeas' 'chickpea' 'coffee' 'jute'
+ 'papaya' 'grapes' 'rice' 'kidneybeans' 'muskmelon' 'mothbeans'
+ 'watermelon' 'coconut']
+[2026-03-05 13:59:09,797] INFO - crop_recommendation.components.training - Best parameters: {'n_estimators': 410, 'max_depth': 12, 'min_samples_split': 6, 'min_samples_leaf': 1, 'random_state': 42}
+[2026-03-05 13:59:10,613] INFO - crop_recommendation.components.training - Final model accuracy: 0.9954545454545455
+[2026-03-05 13:59:38,845] INFO - crop_recommendation.components.training - Model training completed

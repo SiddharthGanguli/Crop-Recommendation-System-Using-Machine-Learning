@@ -24,7 +24,6 @@ class DataPreprocessingConfig:
     test_dir: Path
     processed_train_dir: Path
     processed_test_dir: Path
-    scaler_path: Path
 
 @dataclass
 class ModelTrainerConfig:

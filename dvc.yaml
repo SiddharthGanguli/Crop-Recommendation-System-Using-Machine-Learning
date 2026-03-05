@@ -12,7 +12,7 @@ stages:
       - artifacts/data_ingestion/train.csv
       - artifacts/data_ingestion/test.csv
 
-
+  
   data_validation:
     cmd: python -m crop_recommendation.pipeline.02_data_validation_pipeline
     deps:
@@ -29,17 +29,13 @@ stages:
   data_preprocessing:
     cmd: python -m crop_recommendation.pipeline.03_data_preprocessing_pipeline
     deps:
+      - src/crop_recommendation/components/data_preprocessing.py
+      - src/crop_recommendation/pipeline/03_data_preprocessing_pipeline.py
       - artifacts/data_ingestion/train.csv
       - artifacts/data_ingestion/test.csv
-      - artifacts/data_validation/status.txt
-      - config/config.yaml
-      - src/crop_recommendation/components/data_preprocessing.py
-      - src/crop_recommendation/configuration/config.py
-      - src/crop_recommendation/entity/config_entity.py
     outs:
       - artifacts/data_preprocessing/train_processed.csv
       - artifacts/data_preprocessing/test_processed.csv
-      - artifacts/data_preprocessing/scaler.pkl
 
   model_trainer:
     cmd: python -m crop_recommendation.pipeline.04_training_pipeline

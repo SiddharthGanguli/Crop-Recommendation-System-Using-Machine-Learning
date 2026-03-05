@@ -85,3 +85,49 @@
 [2026-03-05 12:31:03,657] INFO - __main__ - Model Training Stage  completed
 [2026-03-05 12:31:05,797] INFO - __main__ - Model Evaluation Stage started........
 [2026-03-05 12:31:13,076] INFO - __main__ - Model Evaluation Stage completed
+[2026-03-05 13:02:01,984] INFO - __main__ - Model Training Stage started.........
+[2026-03-05 13:04:31,116] INFO - __main__ - Model Training Stage  completed
+[2026-03-05 13:04:33,939] INFO - __main__ - Model Evaluation Stage started........
+[2026-03-05 13:04:41,600] INFO - __main__ - Model Evaluation Stage completed
+[2026-03-05 13:50:53,186] INFO - __main__ - Data Ingestion Stage started...
+[2026-03-05 13:50:53,210] INFO - __main__ - Train data saved at: artifacts/data_ingestion/train.csv
+[2026-03-05 13:50:53,210] INFO - __main__ - Test data saved at: artifacts/data_ingestion/test.csv
+[2026-03-05 13:50:53,210] INFO - __main__ - Data Ingestion Stage completed successfully.
+[2026-03-05 13:50:53,689] INFO - __main__ - Data Validation Stage started...
+[2026-03-05 13:50:53,695] INFO - __main__ - Data Validation Stage completed successfully.
+[2026-03-05 13:50:54,109] INFO - __main__ - Data Preprocessing Stage started...
+[2026-03-05 13:50:54,110] ERROR - __main__ - Error in Data Preprocessing Stage
+Traceback (most recent call last):
+  File "/Users/siddharthaganguli/Desktop/Proj1/Ml_model/crop_recommendation_sys/src/crop_recommendation/pipeline/03_data_preprocessing_pipeline.py", line 23, in main
+    preprocessing_config = config_manager.get_data_preprocessing_config()
+  File "/Users/siddharthaganguli/Desktop/Proj1/Ml_model/crop_recommendation_sys/src/crop_recommendation/configuration/config.py", line 70, in get_data_preprocessing_config
+    scaler_path=Path(preprocessing["scaler_path"])
+KeyError: 'scaler_path'
+[2026-03-05 13:52:56,563] INFO - __main__ - Data Ingestion Stage started...
+[2026-03-05 13:52:56,588] INFO - __main__ - Train data saved at: artifacts/data_ingestion/train.csv
+[2026-03-05 13:52:56,588] INFO - __main__ - Test data saved at: artifacts/data_ingestion/test.csv
+[2026-03-05 13:52:56,588] INFO - __main__ - Data Ingestion Stage completed successfully.
+[2026-03-05 13:52:57,067] INFO - __main__ - Data Validation Stage started...
+[2026-03-05 13:52:57,073] INFO - __main__ - Data Validation Stage completed successfully.
+[2026-03-05 13:52:57,500] INFO - __main__ - Data Preprocessing Stage started...
+[2026-03-05 13:52:57,502] ERROR - __main__ - Error in Data Preprocessing Stage
+Traceback (most recent call last):
+  File "/Users/siddharthaganguli/Desktop/Proj1/Ml_model/crop_recommendation_sys/src/crop_recommendation/pipeline/03_data_preprocessing_pipeline.py", line 26, in main
+    preprocessing_config = config_manager.get_data_preprocessing_config()
+  File "/Users/siddharthaganguli/Desktop/Proj1/Ml_model/crop_recommendation_sys/src/crop_recommendation/configuration/config.py", line 70, in get_data_preprocessing_config
+    scaler_path=Path(preprocessing["scaler_path"])
+KeyError: 'scaler_path'
+[2026-03-05 13:56:51,714] INFO - __main__ - Data Ingestion Stage started...
+[2026-03-05 13:56:51,736] INFO - __main__ - Train data saved at: artifacts/data_ingestion/train.csv
+[2026-03-05 13:56:51,736] INFO - __main__ - Test data saved at: artifacts/data_ingestion/test.csv
+[2026-03-05 13:56:51,736] INFO - __main__ - Data Ingestion Stage completed successfully.
+[2026-03-05 13:56:52,230] INFO - __main__ - Data Validation Stage started...
+[2026-03-05 13:56:52,236] INFO - __main__ - Data Validation Stage completed successfully.
+[2026-03-05 13:56:52,649] INFO - __main__ - Data Preprocessing Stage started...
+[2026-03-05 13:56:52,660] INFO - __main__ - Processed train saved at: artifacts/data_preprocessing/train_processed.csv
+[2026-03-05 13:56:52,660] INFO - __main__ - Processed test saved at: artifacts/data_preprocessing/test_processed.csv
+[2026-03-05 13:56:52,660] INFO - __main__ - Data Preprocessing Stage completed successfully.
+[2026-03-05 13:56:54,572] INFO - __main__ - Model Training Stage started.........
+[2026-03-05 13:59:38,848] INFO - __main__ - Model Training Stage  completed
+[2026-03-05 13:59:41,053] INFO - __main__ - Model Evaluation Stage started........
+[2026-03-05 13:59:48,451] INFO - __main__ - Model Evaluation Stage completed

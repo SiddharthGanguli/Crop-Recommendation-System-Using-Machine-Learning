@@ -1,11 +1,12 @@
 from fastapi import FastAPI
+import mlflow
 import mlflow.pyfunc
 import pandas as pd
-import mlflow
 
 app = FastAPI()
 
-MLFLOW_TRACKING_URI = "http://ec2-3-87-236-150.compute-1.amazonaws.com:5000"
+MLFLOW_TRACKING_URI = "http://ec2-54-91-16-63.compute-1.amazonaws.com:5000/"
+
 
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 
@@ -19,6 +20,19 @@ def health_check():
 
 @app.post("/predict")
 def predict(data: dict):
-    df = pd.DataFrame([data])
+
+    columns = [
+        "N",
+        "P",
+        "K",
+        "temperature",
+        "humidity",
+        "ph",
+        "rainfall"
+    ]
+
+    df = pd.DataFrame([data])[columns]
+
     prediction = model.predict(df)
+
     return {"prediction": prediction.tolist()}

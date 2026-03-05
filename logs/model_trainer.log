@@ -11,3 +11,8 @@
 [2026-03-03 20:32:04,159] INFO - crop_recommendation.components.training - Best accuracy: 0.9954545454545455
 [2026-03-03 20:32:04,160] INFO - crop_recommendation.components.training - Best parameters: {'n_estimators': 124, 'max_depth': 13, 'min_samples_split': 7, 'min_samples_leaf': 4, 'random_state': 42}
 [2026-03-03 20:33:50,830] INFO - crop_recommendation.components.training - Best model trained, logged to MLflow, and saved
+[2026-03-04 17:16:45,004] INFO - crop_recommendation.components.training - Best params: {'n_estimators': 109, 'max_depth': 21, 'min_samples_split': 3, 'min_samples_leaf': 5, 'random_state': 42}
+[2026-03-04 17:18:39,712] INFO - crop_recommendation.components.training - Model training completed
+[2026-03-05 12:28:31,765] INFO - crop_recommendation.components.training - Starting model training
+[2026-03-05 12:30:41,708] INFO - crop_recommendation.components.training - Best parameters: {'n_estimators': 267, 'max_depth': 11, 'min_samples_split': 10, 'min_samples_leaf': 5, 'random_state': 42}
+[2026-03-05 12:31:03,656] INFO - crop_recommendation.components.training - Model training completed

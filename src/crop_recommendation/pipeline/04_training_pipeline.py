@@ -17,7 +17,7 @@ logger = get_logger(
 def main():
     logger.info(f"{STAGE_NAME} started.........")
 
-    mlflow.set_tracking_uri("http://ec2-3-87-236-150.compute-1.amazonaws.com:5000")
+    mlflow.set_tracking_uri("http://ec2-54-91-16-63.compute-1.amazonaws.com:5000")
 
     mlflow.set_experiment("Crop_Recommendation_Training")
 
@@ -27,7 +27,7 @@ def main():
     trainer = ModelTrainer(config=trainer_config)
     trainer.main_model_trainer()
 
-    logger.info(f"{STAGE_NAME} completed")
+    logger.info(f"{STAGE_NAME}  completed")
 
 
 if __name__ == "__main__":

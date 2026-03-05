@@ -44,14 +44,13 @@ stages:
   model_trainer:
     cmd: python -m crop_recommendation.pipeline.04_training_pipeline
     deps:
+      - src/crop_recommendation/components/training.py
       - src/crop_recommendation/pipeline/04_training_pipeline.py
-      - config/config.yaml
-      - params.yaml
       - artifacts/data_preprocessing/train_processed.csv
       - artifacts/data_preprocessing/test_processed.csv
+      - config/params.yaml
     outs:
       - artifacts/model_trainer/model.pkl
-
   model_evaluation:
     cmd: python -m crop_recommendation.pipeline.05_evaluation_pipeline
     deps:

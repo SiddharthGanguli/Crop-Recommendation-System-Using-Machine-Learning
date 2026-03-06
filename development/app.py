@@ -21,8 +21,7 @@ mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 model = mlflow.pyfunc.load_model("models:/random-forest1@production")
 
 
-LLM_URL = "http://13.217.114.146:11434/api/generate"
-
+LLM_URL = "http://13.216.161.236:11434/api/generate"
 
 @app.get("/")
 def health_check():
